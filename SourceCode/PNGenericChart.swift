@@ -8,16 +8,16 @@
 
 import UIKit
 
-class PNGenericChart: UIView {
-    var hasLegend: Bool!
-    var legendPosition: PNLegendPosition!
-    var legendStyle: PNLegendItemStyle!
-    var legendFont: UIFont!
-    var legendFontColor: UIColor!
-    var labelRowsInSerialMode: Int!
-    var displayAnimation: Bool!
+public class PNGenericChart: UIView {
+    public var hasLegend: Bool!
+    public var legendPosition: PNLegendPosition!
+    public var legendStyle: PNLegendItemStyle!
+    public var legendFont: UIFont!
+    public var legendFontColor: UIColor!
+    public var labelRowsInSerialMode: Int!
+    public var displayAnimation: Bool!
     
-    func setupDefaultValues() {
+    public func setupDefaultValues() {
         hasLegend = true
         legendPosition = .Bottom
         legendStyle = .Stacked
@@ -25,7 +25,7 @@ class PNGenericChart: UIView {
         displayAnimation = true
     }
     
-    func getLegendWIthMaxWidth(maxWidth: Float) -> UIView! {
+    public func getLegendWIthMaxWidth(maxWidth: Float) -> UIView! {
         //self.doesNotRecognizeSelector(_cmd)
         return nil
     }
@@ -40,14 +40,14 @@ class PNGenericChart: UIView {
 }
 
 extension PNGenericChart {
-    enum PNLegendPosition: Int {
+    public enum PNLegendPosition: Int {
         case Top = 0
         case Bottom = 1
         case Left = 2
         case Right = 3
     }
     
-    enum PNLegendItemStyle: Int {
+    public enum PNLegendItemStyle: Int {
         case Stacked = 0
         case Serial = 1
     }

@@ -8,22 +8,22 @@
 
 import UIKit
 
-class PNBar: UIView {
+public class PNBar: UIView {
 
     // Time brfore bar starts to animate
     var startAnimationTime = 0.0
     
-    var chartLine: CAShapeLayer!
+    public var chartLine: CAShapeLayer!
     
-    var barColor = PNFreshGreen
+    public var barColor = PNFreshGreen
     
-    var barRadius: CGFloat = 0.0 {
+    public var barRadius: CGFloat = 0.0 {
         didSet {
             layer.cornerRadius = barRadius
         }
     }
     
-    var grade: CGFloat = 0 {
+    public var grade: CGFloat = 0 {
         didSet {
             UIGraphicsBeginImageContext(self.frame.size)
             
@@ -50,7 +50,7 @@ class PNBar: UIView {
         }
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.chartLine = CAShapeLayer()
         self.chartLine.lineCap = kCALineCapButt
@@ -63,11 +63,11 @@ class PNBar: UIView {
         barRadius = 10.0
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         // Draw BackGround
         let context = UIGraphicsGetCurrentContext()!
         context.setFillColor((self.backgroundColor?.cgColor)!)

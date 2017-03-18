@@ -9,7 +9,7 @@
 import UIKit
 import QuartzCore
 
-class PNLineChart: UIView{
+public class PNLineChart: UIView {
 
     public var xLabels: NSArray = []{
         didSet {
@@ -156,12 +156,12 @@ class PNLineChart: UIView{
     
     // Initialize Methods
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setDefaultValues()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -179,12 +179,12 @@ class PNLineChart: UIView{
         self.chartCavanHeight = self.frame.size.height - (chartMargin * 2.0)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         touchPoint(touches: touches as NSSet, withEvent: event!)
         touchKeyPoint(touches: touches as NSSet, withEvent: event!)
     }
     
-    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override public func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         touchPoint(touches: touches as NSSet, withEvent: event!)
         touchKeyPoint(touches: touches as NSSet, withEvent: event!)
     }
@@ -238,7 +238,7 @@ class PNLineChart: UIView{
     }
     
     // This method will be called and stroke the line in animation
-    func strokeChart() {
+    public func strokeChart() {
         let chartPaths = NSMutableArray()
         let pointPaths = NSMutableArray()
         
@@ -385,7 +385,7 @@ class PNLineChart: UIView{
         }
     }
     
-    override func draw(_ rect: CGRect) {
+    override public func draw(_ rect: CGRect) {
         if showCoordinateAxis {
             let yAxisOffset: CGFloat = 10.0
             let ctx = UIGraphicsGetCurrentContext()

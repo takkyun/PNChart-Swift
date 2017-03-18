@@ -8,8 +8,8 @@
 
 import UIKit
 
-class PNChartLabel: UILabel {
-    override init(frame: CGRect) {
+public class PNChartLabel: UILabel {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.font = UIFont.boldSystemFont(ofSize: 10.0)
         self.textColor = PNGrey
@@ -18,7 +18,7 @@ class PNChartLabel: UILabel {
         self.isUserInteractionEnabled = true
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder: NSCode) has not been implemented.")
     }
 

@@ -9,8 +9,8 @@
 import UIKit
 
 
-class PNPieChart: PNGenericChart {
-    var items: [PNPieChartDataItem]!
+public class PNPieChart: PNGenericChart {
+    public var items: [PNPieChartDataItem]!
     var endPercentages: [CGFloat]!
     
     var contentView: UIView!
@@ -20,47 +20,47 @@ class PNPieChart: PNGenericChart {
     var sectorHighlight: CAShapeLayer!
     var selectedItems: NSMutableDictionary!
     
-    var descriptionTextFont: UIFont!
-    var descriptionTextColor: UIColor!
-    var descriptionTextShadowColor: UIColor!
-    var descriptionTextShadowOffset: CGSize!
-    var duration: TimeInterval!
+    public var descriptionTextFont: UIFont!
+    public var descriptionTextColor: UIColor!
+    public var descriptionTextShadowColor: UIColor!
+    public var descriptionTextShadowOffset: CGSize!
+    public var duration: TimeInterval!
     
-    var hideValues: Bool!
-    var showOnlyValues: Bool!
-    var showAbsoluteValues: Bool!
+    public var hideValues: Bool!
+    public var showOnlyValues: Bool!
+    public var showAbsoluteValues: Bool!
     
-    var showTextShadow: Bool!
+    public var showTextShadow: Bool!
     
     // Hide percentage labels less than cutoff value
-    var labelPercentageCutoff: CGFloat = 0
+    public var labelPercentageCutoff: CGFloat = 0
     
     // Default as true
-    var shouldHighlightSectorOnTouch: Bool!
+    public var shouldHighlightSectorOnTouch: Bool!
     
     // Current outer radius. Override recompute() to change this.
-    var outerCircleRadius: CGFloat!
+    public var outerCircleRadius: CGFloat!
     // Current inner radius. Override recompute() to change this.
-    var innerCircleRadius: CGFloat!
+    public var innerCircleRadius: CGFloat!
     
     // Multiple selection
-    var enableMultipleSelection: Bool!
+    public var enableMultipleSelection: Bool!
     
-    init(frame: CGRect, items: [PNPieChartDataItem]) {
+    public init(frame: CGRect, items: [PNPieChartDataItem]) {
         super.init(frame: frame)
         self.items = items
         baseInit()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         baseInit()
     }
-    override func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         strokeChart()
     }
@@ -319,7 +319,7 @@ extension PNPieChart {
         }
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let touchLocation = touch.location(in: contentView)
             self.didTouchAt(touchLocation: touchLocation)
